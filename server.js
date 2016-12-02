@@ -1,12 +1,17 @@
   var express = require("express");
   var bodyParser = require('body-parser');
+
+ 
   // var methodOverride = require('method-override');
+
 
 //setting up express and page
   var app = express();
   var PORT = process.env.PORT || 7000;
 
   app.use(express.static(process.cwd() + '/public'));
+
+
 
   app.use(bodyParser.urlencoded({
     extended: false
@@ -23,9 +28,10 @@
 
 
 
+
+
   var routes = require('./controllers/news_controller.js');
   app.use('/', routes);
-
 
   //port listen
   app.listen(PORT, function(){
