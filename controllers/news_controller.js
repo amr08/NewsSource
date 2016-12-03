@@ -48,36 +48,40 @@ db.on("error", function(error) {
 
  router.get("/scrape", function(req, res) {
   // Make a request for the news section of ycombinator
-  request("https://news.ycombinator.com/", function(error, response, html) {
+  request("http://www.bbc.com/news/world/us_and_canada", function(error, response, html) {
     // Load the html body from request into cheerio
     var $ = cheerio.load(html);
     // For each element with a "title" class
-    $(".title").each(function(i, element) {
-      // Save the text of each link enclosed in the current element
-      var title = $(this).children("a").text();
-      // Save the href value of each link enclosed in the current element
-      var link = $(this).children("a").attr("href");
+
+
+    $(".faux-block-link__overlay-link").each(function(i, element) {
+
+      var title = element.children[0].data
+      var link = "www.bbc.com" + element.attribs.href
+  
+      console.log(title)
+      console.log(link)
 
       // If this title element had both a title and a link
-      if (title && link) {
-        // Save the data in the scrapedData db
-        db.news.save({
-          title: title,
-          link: link
-        },
-        function(error, saved) {
-          // If there's an error during this query
-          if (error) {
-            // Log the error
-            console.log(error);
-          }
-          // Otherwise,
-          else {
-            // Log the saved data
-            console.log(saved);
-          }
-        });
-      }
+      // if (title && link) {
+      //   // Save the data in the scrapedData db
+      //   db.news.save({
+      //     title: title,
+      //     link: link
+      //   },
+      //   function(error, saved) {
+      //     // If there's an error during this query
+      //     if (error) {
+      //       // Log the error
+      //       console.log(error);
+      //     }
+      //     // Otherwise,
+      //     else {
+      //       // Log the saved data
+      //       console.log(saved);
+          // }
+      //   });
+      // }
     });
   });
 
