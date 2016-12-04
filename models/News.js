@@ -1,26 +1,23 @@
-var mongoose = require("mongoose");
+  var mongoose = require("mongoose");
+  var Schema = mongoose.Schema;
 
-var Schema = mongoose.Schema;
+  var NewsSchema = new Schema({
+    title: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    link: {
+      type: String,
+      required: true,
+      unique: true
+    }
+    // note: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "Note"
+    // }
+  });
 
-var NewsSchema = new Schema({
+  var News = mongoose.model("News", NewsSchema);
 
-  title: {
-    type: String,
-    required: true
-  },
-
-  link: {
-    type: String,
-    required: true
-  }
-
-  // note: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Note"
-  // }
-});
-
-var News = mongoose.model("News", NewsSchema);
-
-// Finally, we export the module, allowing server.js to hook into it with a require statement
-module.exports = News;
+  module.exports = News;
