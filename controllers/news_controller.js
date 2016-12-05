@@ -5,32 +5,28 @@
   var db = require("../db/db.js")
   var News = require("../models/News.js");
 
-//redirect to scrape
+//scrape
   router.get("/", function (req, res) {
-    res.redirect("/all");
-  });
-
-//scraping db
-  router.get("/all", function(req, res) {
-    request("http://www.bbc.com/news/world/us_and_canada", function(error, response, html) {
+     request("http://www.bbc.com/news/world/us_and_canada", function(error, response, html) {
       var $ = cheerio.load(html);
-      $(".faux-block-link__overlay-link").each(function(i, element) {
+      $(".title-link__title").each(function(i, element) {
         var result = {};
-        result.title = element.children[0].data;
-        result.link = "www.bbc.com" + element.attribs.href;
-        // console.log(result.title)
-        // console.log(result.link)
+        var link = $(this).parent("a").attr("href");
+        result.title = $(this).children().text();
+        result.link = "https://www.bbc.com" + link;
+        console.log(result.title)
+        console.log(result.link)
         var entry = new News(result);
         entry.save(function(err, doc) {
           if (err) {
             console.log(err);
           } else {
-            // console.log(doc);
+            console.log(doc);
           }
         });
       });
+      res.redirect("/bbc");
     });
-    res.redirect("/bbc");
   });
 
 //landing page with db
