@@ -12,7 +12,6 @@
   app.use(bodyParser.urlencoded({
     extended: false
   }));
-
   app.use(express.static("public"));
 
 //handlebars
@@ -25,7 +24,6 @@
 //routes
   var routes = require('./controllers/news_controller.js');
   app.use('/', routes);
-
 
   app.listen(3333, function() {
     console.log("App running on port 3333!");

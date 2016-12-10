@@ -14,14 +14,11 @@
           var link = $(this).parent("a").attr("href");
           result.title = $(this).children().text();
           result.link = "https://www.bbc.com" + link;
-     
           var entry = new Article(result);
           entry.save(function(err, doc) {
             if (err) {
               console.log(err);
-            } else {
-              // console.log(doc);
-            }
+            } 
           });
         });
         res.redirect("/articles");
@@ -35,10 +32,7 @@
       if (error) {
         console.log(error);
       } else {
-        // console.log(article)
-       
         res.render("index", {Article: article});
-    
       }
     });
   });
@@ -49,9 +43,7 @@
     .exec(function(error, doc) {
       if (error) {
         console.log(error);
-      } else {
-        // res.json(doc);
-      }
+      } 
     });
   });
 
@@ -65,12 +57,8 @@
         .exec(function(err, doc) {
           if (err) {
             console.log(err);
-          }
-          else {
-             res.redirect("/articles");
-            // res.json(doc);
-
-
+          } else {
+            res.redirect("/articles");
           }
         });
       }
@@ -84,8 +72,6 @@
       console.log(error);
       res.send(error);
       } else {
-        console.log(removed);
-        res.send(removed);
         res.redirect('/burgers');
       }
     });

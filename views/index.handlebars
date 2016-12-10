@@ -11,11 +11,9 @@
     </div>
   </div>
 
-
-
-
   <div class="container" id="pageTwo">
     <div class="row">
+
       {{#each Article}}
         <div class="col-sm-6 box">
           <ul>
@@ -33,16 +31,13 @@
               </form>
           </ul>
         
-          <h4 class="center"> My Notes: </h4>
+          <h4 class="center"> Notes </h4>
           <div id="box"> 
             <h5>{{this.note.body}}</h5>
-          </div>
-
-        
+          </div>  
         </div>
-         
-     
-      {{/each}}   
+      {{/each}} 
+        
     </div>
   </div>
 
