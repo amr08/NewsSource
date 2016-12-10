@@ -26,14 +26,15 @@
                 <div class="btn-group-sm" role="group" aria-label="...">
                 
              
-                  <button type="submit" data-id="{{this._id}}" id="savenote" class="btn btn-success">Add Note</button>
-                  <button type="button" id="deleteNote" class="btn btn-danger">Delete Note</button>
+                  <button type="submit" data-id="{{this._id}}" action="/articles/{{this._id}}" method="POST" id="savenote" class="btn btn-success">Add Note</button>
+                  <button type="submit" data-id="{{this.note}}" action="/delete/{{this.note}}?method=delete" method="DELETE"id="deleteNote" class="btn btn-danger">Delete Note</button>
               </div>
             </form>
           </ul>
 
           <div class="box"> 
-             <h4>{{this.note.body}}</h4>
+            <h4> My Notes: </h4>
+            <h5>{{this.note.body}}</h5>
           </div>
 
         

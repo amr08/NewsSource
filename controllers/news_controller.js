@@ -77,17 +77,18 @@
     });
   });
 
-  // router.get("/articles", function(req, res) {
-  //   Note.find({}, function(error, doc) {
-  //     var hasObject = {Note: doc};
-  //     if (error) {
-  //       console.log(error);
-  //     } else {
-  //       // res.json(doc);
-  //       res.render("index", hasObject);
-  //     }
-  //   });
-  // });
+  router.get('/delete/:id', function(req, res) {
+    Article.deleteOne({"_id": req.params.id})
+      .exec(function(err, doc) {
+       if (error) {
+      console.log(error);
+      res.send(error);
+      } else {
+        console.log(removed);
+        res.send(removed);
+        res.redirect('/burgers');
+      }
+    });
+  });
 
-      
   module.exports = router;
