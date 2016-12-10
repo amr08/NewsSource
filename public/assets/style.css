@@ -1,6 +1,49 @@
-li{
+	
+li {
 	list-style-type: none;
 }
-li a:hover{
+
+li a:hover {
 	text-decoration: none;
+}
+
+body {
+	background-color: ivory;
+}
+
+.form-control {
+	height: 200px;
+}
+
+.jumbotron {
+	height: 700px;
+	width: 100%;
+	background-image: url("http://www.theimaginativeconservative.org/wp-content/uploads/2016/05/roman-battle.jpg");
+	background-size: 1100px;
+	z-index: 0;
+	position: relative;
+	background-attachment: fixed;
+}
+
+#overlay {
+	height: 700px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, .8);
+	z-index: 1;
+	position: absolute;
+	top: 0;
+}
+
+#pageTwo {
+	background-attachment: fixed;
+	background-color: rgba(255,255,255, .2);
+	padding: 0px;
+}
+
+.box {
+	border-radius: 10px;
+	padding: 15px;
+	box-shadow: 2px 2px 10px;
+	background-color: white;
+	margin: 10px;
 }

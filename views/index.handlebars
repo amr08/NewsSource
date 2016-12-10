@@ -1,26 +1,47 @@
-
-<div class="container">
-	<div class="jumbotron">
-  		<h1>News Source</h1>
-  		 <h2>Your site for real news</h2>
-  	</div>
-
-  	<div class="row">
-	  	<div class="col-md-12">
-		    <ul>
-		      {{#each News}}
-		        <li class "list">
-		            <h4>{{this.title}}</h4>
-		         	<a href="{{this.link}}">{{this.link}}</a>
-		        </li>
-		        <div class="btn-group" role="group" aria-label="...">
+  <div class="jumbotron">
+    <div id="overlay">
+      <div class="container">
+        <br>
+          <h1>News Source</h1>
+          <h2>Your site for real news</h2>
+      </div>
+    </div>
+  </div>
 
 
-			<button type="button" id="addNote" class="btn btn-primary">Add Note</button>
 
-				</div>
-		      {{/each}}
-		    </ul>
-	  	</div>
-	</div>
-</div>
+
+  <div class="container" id="pageTwo">
+    <div class="row">
+      {{#each Article}}
+        <div class="col-sm-6 box">
+          <ul>
+            <li class="list">
+              <h4>{{this.title}}</h4>
+              <a href="{{this.link}}">{{this.link}}</a>
+            </li>
+            <form class="create-update-form" action="/articles/{{this._id}}" method="POST">
+            {{!--   <div class="form-group"> --}}
+                <input placeholder="Comment" data-id="{{this._id}}" id="notes" type="text" name="body"></input>
+                <div class="btn-group-sm" role="group" aria-label="...">
+                
+             
+                  <button type="submit" data-id="{{this._id}}" id="savenote" class="btn btn-success">Add Note</button>
+                  <button type="button" id="deleteNote" class="btn btn-danger">Delete Note</button>
+              </div>
+            </form>
+          </ul>
+
+          <div class="box"> 
+             <h4>{{this.note.body}}</h4>
+          </div>
+
+        
+          </div>
+         
+        </div>
+      {{/each}}   
+    </div>
+  </div>
+
+

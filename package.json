@@ -1,32 +1,22 @@
 {
-  "name": "newssource",
+  "name": "mongoose_skeleton",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amr08/NewsSource.git"
-  },
-  "keywords": [
-    "mongodb"
-  ],
-  "author": "AR",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amr08/NewsSource/issues"
-  },
-  "homepage": "https://github.com/amr08/NewsSource#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
-    "body-parser": "^1.15.2",
-    "cheerio": "^0.22.0",
-    "express": "^4.14.0",
+    "body-parser": "^1.15.0",
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
-    "mongojs": "^2.4.0",
-    "mongoose": "^4.7.0",
-    "request": "^2.79.0"
+    "mongoose": "^4.4.6",
+    "morgan": "^1.7.0",
+    "request": "^2.69.0"
   }
 }
