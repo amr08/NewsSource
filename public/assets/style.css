@@ -1,4 +1,6 @@
 	
+
+
 li {
 	list-style-type: none;
 }
@@ -9,6 +11,9 @@ li a:hover {
 
 body {
 	background-color: ivory;
+	background-image: url("http://comefare.donnamoderna.com/wp-content/uploads/2014/12/marmo1.jpg");
+	background-attachment: fixed;
+	
 }
 
 .form-control {
@@ -38,12 +43,35 @@ body {
 	background-attachment: fixed;
 	background-color: rgba(255,255,255, .2);
 	padding: 0px;
+
 }
 
 .box {
 	border-radius: 10px;
 	padding: 15px;
 	box-shadow: 2px 2px 10px;
+	background-color: rgba(254, 249, 231, .7);
+
+}
+
+#box {
+	border-radius: 10px;
+	padding: 15px;
+	box-shadow: 2px 2px 10px;
 	background-color: white;
-	margin: 10px;
+	height: 100px;
+
+
+}
+
+.center {
+	text-align: center;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

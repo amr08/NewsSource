@@ -1,9 +1,12 @@
   <div class="jumbotron">
     <div id="overlay">
       <div class="container">
+        <div class="page-header">
         <br>
-          <h1>News Source</h1>
-          <h2>Your site for real news</h2>
+          <h1>Real News</h1>
+          <h2>Ligitimate journalism</h2>
+          <h3> Because yes please?</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -16,31 +19,29 @@
       {{#each Article}}
         <div class="col-sm-6 box">
           <ul>
-            <li class="list">
+            <li>
               <h4>{{this.title}}</h4>
               <a href="{{this.link}}">{{this.link}}</a>
             </li>
-            <form class="create-update-form" action="/articles/{{this._id}}" method="POST">
-            {{!--   <div class="form-group"> --}}
+              <form class="create-update-form" action="/articles/{{this._id}}" method="POST">
                 <input placeholder="Comment" data-id="{{this._id}}" id="notes" type="text" name="body"></input>
-                <div class="btn-group-sm" role="group" aria-label="...">
                 
-             
+                <div class="btn-group-md" role="group" aria-label="...">
                   <button type="submit" data-id="{{this._id}}" action="/articles/{{this._id}}" method="POST" id="savenote" class="btn btn-success">Add Note</button>
                   <button type="submit" data-id="{{this.note}}" action="/delete/{{this.note}}?method=delete" method="DELETE"id="deleteNote" class="btn btn-danger">Delete Note</button>
-              </div>
-            </form>
+                </div>
+              </form>
           </ul>
-
-          <div class="box"> 
-            <h4> My Notes: </h4>
+        
+          <h4 class="center"> My Notes: </h4>
+          <div id="box"> 
             <h5>{{this.note.body}}</h5>
           </div>
 
         
-          </div>
-         
         </div>
+         
+     
       {{/each}}   
     </div>
   </div>
