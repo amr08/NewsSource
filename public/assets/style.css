@@ -9,8 +9,7 @@ li a:hover {
 body {
 	background-color: ivory;
 	background-image: url("http://comefare.donnamoderna.com/wp-content/uploads/2014/12/marmo1.jpg");
-	background-attachment: fixed;
-	
+	background-attachment: fixed;	
 }
 
 .form-control {
