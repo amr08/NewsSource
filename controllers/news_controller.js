@@ -7,7 +7,7 @@
   var Note = require("../models/Note.js");
     
   router.get("/", function(req, res) {
-        request("http://www.bbc.com/news/world/us_and_canada", function(error, response, html) {
+        request("https://www.bbc.com/news/world/us_and_canada", function(error, response, html) {
         var $ = cheerio.load(html);
         $(".title-link__title").each(function(i, element) {
           var result = {};
